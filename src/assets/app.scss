@@ -1,0 +1,85 @@
+@import "variables";
+
+* {
+    img,
+    video {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.v-carousel {
+    position: relative;
+    overflow: hidden;
+
+    .v-carousel-pager {
+        position: absolute;
+        bottom: 1rem;
+        width: 100%;
+        text-align: center;
+
+        button {
+            position: relative;
+            border: 0.25rem solid $gray-200;
+            border-radius: 9999px;
+            margin-right: 0.5rem;
+            height: 1.5rem;
+            width: 2rem;
+            cursor: pointer;
+
+            &.v-carousel-current-page {
+                width: 3rem;
+            }
+        }
+    }
+
+    .v-carousel-counter {
+        position: absolute;
+        bottom: 1rem;
+        right: 0.25rem;
+        padding: 0.25rem;
+        font-size: 1rem;
+        border-radius: 0.5rem;
+        background-color: $gray-100;
+    }
+
+    .v-carousel-slides-wrapper {
+        width: 100%;
+        position: relative;
+
+        // .v-carousel-slides-container {
+        display: flex;
+        transition-property: transform;
+        // }
+
+        .v-carousel-slide {
+            @extend .v-carousel-slide-active;
+            opacity: 0.4;
+        }
+        .v-carousel-slide-active {
+            flex-grow: 0;
+            flex-shrink: 0;
+            flex-basis: inherit;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .v-carousel-pager {
+            bottom: 0.5rem;
+
+            button {
+                height: 1rem;
+                width: 1rem;
+
+                &.v-carousel-current-page {
+                    width: 2rem;
+                }
+            }
+        }
+
+        .v-carousel-counter {
+            bottom: 0.5rem;
+            font-size: 0.5rem;
+        }
+    }
+}
