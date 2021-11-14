@@ -1,6 +1,6 @@
 import { shallowMount } from "@vue/test-utils";
-import VCarouselCounter from "../../../src/lib-components/Counter";
-import { CarouselSymbol } from "../../../src/lib-components/types";
+import VCarouselCounter from "../../../src/components/Counter";
+import { CarouselSymbol } from "../../../src/components/types";
 
 describe("Counter Component", () => {
     it("should be same text", () => {

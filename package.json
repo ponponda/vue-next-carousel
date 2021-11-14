@@ -1,92 +1,46 @@
 {
     "name": "vue-next-carousel",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Carousel Component for Vue 3",
     "author": "Burke Yu",
-    "scripts": {
-        "serve": "vue-cli-service serve dev/serve.ts",
-        "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
-        "test:unit": "vue-cli-service test:unit",
-        "test:e2e": "vue-cli-service test:e2e",
-        "build:doc": "vue-cli-service build dev/serve.ts --dest docs --mode development",
-        "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
-        "build:ssr": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format cjs",
-        "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife",
-        "postbuild": "rimraf ./dist/types/dev ./dist/types/src/entry.d.ts",
-        "prebuild": "rimraf ./dist"
+    "files": ["dist"],
+    "main": "./dist/vue-next-carousel.umd.js",
+    "module": "./dist/vue-next-carousel.es.js",
+    "exports": {
+        ".": {
+            "import": "./dist/vue-next-carousel.es.js",
+            "require": "./dist/vue-next-carousel.umd.js"
+        }
     },
-    "main": "dist/vue-next-carousel.ssr.js",
-    "module": "dist/vue-next-carousel.esm.js",
-    "browser": "dist/vue-next-carousel.esm.js",
-    "unpkg": "dist/vue-next-carousel.min.js",
-    "files": [
-        "dist/*",
-        "src/*"
-    ],
+    "scripts": {
+        "dev": "vite",
+        "build": "vue-tsc --noEmit && vite build",
+        "serve": "vite preview",
+        "test:unit": "jest",
+        "test:e2e": "npx cypress open-ct"
+    },
     "dependencies": {
-        "core-js": "^3.16.2",
-        "resize-observer-polyfill": "^1.5.1",
-        "vue": "^3.0.5"
+        "vue": "^3.2.16"
     },
     "devDependencies": {
-        "@babel/core": "^7.14.6",
-        "@babel/preset-env": "^7.14.7",
-        "@babel/preset-typescript": "^7.14.5",
-        "@rollup/plugin-alias": "^3.1.2",
-        "@rollup/plugin-babel": "^5.3.0",
-        "@rollup/plugin-commonjs": "^14.0.0",
-        "@rollup/plugin-node-resolve": "^9.0.0",
-        "@rollup/plugin-replace": "^2.4.2",
-        "@types/jest": "^24.0.19",
-        "@vue/cli-plugin-babel": "^4.5.13",
-        "@vue/cli-plugin-e2e-cypress": "~4.5.0",
-        "@vue/cli-plugin-typescript": "^4.5.13",
-        "@vue/cli-plugin-unit-jest": "~4.5.0",
-        "@vue/cli-service": "^4.5.13",
-        "@vue/compiler-sfc": "^3.0.11",
-        "@vue/test-utils": "^2.0.0-0",
-        "@zerollup/ts-transform-paths": "^1.7.18",
-        "autoprefixer": "^10.3.1",
-        "cross-env": "^7.0.3",
-        "minimist": "^1.2.5",
-        "node-sass": "^4.12.0",
-        "postcss": "^8.3.6",
-        "rimraf": "^3.0.2",
-        "rollup": "^2.52.8",
-        "rollup-plugin-postcss": "^4.0.0",
-        "rollup-plugin-scss": "^3.0.0",
-        "rollup-plugin-terser": "^7.0.2",
-        "rollup-plugin-typescript2": "^0.30.0",
-        "rollup-plugin-vue": "^6.0.0",
-        "sass-loader": "^8.0.2",
-        "ttypescript": "^1.5.12",
-        "typescript": "^4.0.3",
-        "vue-jest": "^5.0.0-0"
-    },
-    "peerDependencies": {
-        "vue": "^3.0.5"
-    },
-    "bugs": {
-        "url": "https://github.com/ponponda/vue-next-carousel/issues"
-    },
-    "engines": {
-        "node": ">=12"
-    },
-    "homepage": "https://ponponda.github.io/vue-next-carousel/",
-    "keywords": [
-        "vue",
-        "vue 3",
-        "vuejs",
-        "typescript",
-        "carousel",
-        "slider",
-        "responsive"
-    ],
-    "license": "MIT",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/ponponda/vue-next-carousel.git"
-    },
-    "sideEffects": false,
-    "types": "dist/types/src/entry.esm.d.ts"
+        "@babel/core": "^7.16.0",
+        "@babel/preset-env": "^7.16.0",
+        "@babel/preset-typescript": "^7.16.0",
+        "@cypress/vite-dev-server": "^2.2.0",
+        "@cypress/vue": "^3.0.5",
+        "@testing-library/jest-dom": "^5.15.0",
+        "@types/jest": "^27.0.2",
+        "@vitejs/plugin-vue": "^1.9.3",
+        "@vue/test-utils": "^2.0.0-rc.16",
+        "babel-jest": "^27.3.1",
+        "cypress": "^9.0.0",
+        "jest": "^27.3.1",
+        "regenerator-runtime": "^0.13.9",
+        "sass": "^1.43.4",
+        "ts-jest": "^27.0.7",
+        "typescript": "^4.4.3",
+        "vite": "^2.6.4",
+        "vue-jest": "^5.0.0-alpha.10",
+        "vue-tsc": "^0.3.0"
+    }
 }

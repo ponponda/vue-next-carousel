@@ -5,7 +5,7 @@ config.global.directives["swipe"] = Swipe;
 
 const App = {
     props: {
-        watch: Boolean
+        watch: Boolean,
     },
     data() {
         return {
@@ -16,11 +16,11 @@ const App = {
                 onRight: jest.fn(),
                 onUp: jest.fn(),
                 onDown: jest.fn(),
-                onEnd: jest.fn()
-            }
+                onEnd: jest.fn(),
+            },
         };
     },
-    template: `<div v-swipe="options"></div>`
+    template: `<div v-swipe="options"></div>`,
 };
 
 describe("Swipe Directive", () => {

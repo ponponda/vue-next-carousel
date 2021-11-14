@@ -1,6 +1,6 @@
 import { shallowMount } from "@vue/test-utils";
-import VCarouselPager from "../../../src/lib-components/Pager";
-import { CarouselSymbol } from "../../../src/lib-components/types";
+import VCarouselPager from "../../../src/components/Pager";
+import { CarouselSymbol } from "../../../src/components/types";
 
 describe("Counter Component", () => {
     let idx = 0,

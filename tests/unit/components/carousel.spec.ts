@@ -1,6 +1,6 @@
 import { shallowMount } from "@vue/test-utils";
 import { h } from "vue";
-import VCarousel from "../../../src/lib-components/Carousel";
+import VCarousel from "../../../src/components/Carousel";
 
 describe("Carousel Component", () => {
     it("should register 0 slide", () => {

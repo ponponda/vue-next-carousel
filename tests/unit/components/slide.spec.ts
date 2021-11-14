@@ -1,7 +1,7 @@
 import { shallowMount } from "@vue/test-utils";
 import { h } from "vue";
-import VCarouselSlide from "../../../src/lib-components/Slide";
-import { CarouselSymbol } from "../../../src/lib-components/types";
+import VCarouselSlide from "../../../src/components/Slide";
+import { CarouselSymbol } from "../../../src/components/types";
 
 describe("Slide Component", () => {
     it("should match snapshot", () => {

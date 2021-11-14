@@ -1,4 +1,4 @@
-import ResizeObserver from "resize-observer-polyfill";
+// import ResizeObserver from "resize-observer-polyfill";
 import { computed, ref, Ref, watch } from "vue";
 
 interface DOMRectReadOnly {
@@ -23,11 +23,13 @@ export default class {
             if (this._observer.value) this._observer.value.disconnect();
             if (!this._element.value) return;
 
-            this._observer.value = new ResizeObserver((entries: ResizeObserverEntry[]) => {
-                entries.forEach(entry => {
-                    this._contentRect.value = entry.contentRect;
-                });
-            });
+            this._observer.value = new ResizeObserver(
+                (entries: ResizeObserverEntry[]) => {
+                    entries.forEach((entry) => {
+                        this._contentRect.value = entry.contentRect;
+                    });
+                }
+            );
 
             this._observer.value.observe(this._element.value);
         });

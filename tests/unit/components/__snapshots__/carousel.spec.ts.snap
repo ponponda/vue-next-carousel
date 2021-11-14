@@ -1,3 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Carousel Component should register 0 slide 1`] = `<div class="v-carousel"></div>`;
+exports[`Carousel Component should register 0 slide 1`] = `"<div class=\\"v-carousel\\"></div>"`;
